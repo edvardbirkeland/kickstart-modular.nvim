@@ -59,9 +59,30 @@ return {
 
       -- Document existing key chains
       spec = {
-        { '<leader>s', group = '[S]earch' },
-        { '<leader>t', group = '[T]oggle' },
+        -- Document existing key chains
+        { '<leader>s', group = '[S]earch', icon = { icon = '', color = 'green' } },
+        { '<leader>t', group = '[T]oggle', icon = { icon = '󰔢', color = 'purple' } },
         { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
+        { 'gr', group = 'LSP', icon = { icon = '', color = 'cyan' } },
+
+        -- Document custom key chains and set icons
+        -- Diffview
+        { '<leader>g', group = '[G]it Diffview', icon = { icon = '󰊢', color = 'orange' } },
+        { '<leader>gd', group = '[G]it [D]iff' },
+        { '<leader>gh', group = '[G]it [H]istory ' },
+
+        -- Marks
+        { '<leader>m', group = '[M]arks', icon = { icon = '󰍎', color = 'yellow' } },
+        { '<leader>md', icon = { icon = '󰼊', color = 'red' } },
+        { '<leader>ms', icon = { icon = '', color = 'green' } },
+        { '<leader>mt', icon = { icon = '󰔢', color = 'purple' } },
+
+        -- Neoclip
+        { '<leader>p', icon = { icon = '󰆒', color = 'cyan' } },
+
+        -- Multicursor
+        { '<leader><up>', icon = { icon = '󰞕', color = 'blue' } },
+        { '<leader><down>', icon = { icon = '󰞒', color = 'blue' } },
       },
     },
   },
