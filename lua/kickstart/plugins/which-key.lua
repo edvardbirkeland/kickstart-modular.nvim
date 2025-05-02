@@ -94,6 +94,9 @@ return {
         { '<leader>M', group = '[M]arkview', icon = { icon = '󰔢', color = 'purple' } },
         { '<leader>Mt', icon = { icon = '󰔢', color = 'purple' } },
         { '<leader>Ms', icon = { icon = '󰔢', color = 'purple' } },
+
+        -- Namu
+        { '<leader>ss', group = '[S]earch [S]ymbols', icon = { icon = '', color = 'green' } },
       },
     },
   },
