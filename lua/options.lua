@@ -66,4 +66,7 @@ vim.opt.scrolloff = 10
 -- See `:help 'confirm'`
 vim.opt.confirm = true
 
+-- Disable auto comment for all file types
+vim.cmd [[autocmd FileType * set formatoptions-=ro]]
+
 -- vim: ts=2 sts=2 sw=2 et

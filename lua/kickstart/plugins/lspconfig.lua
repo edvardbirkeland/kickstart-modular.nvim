@@ -109,6 +109,15 @@ return {
           --  the definition of its *type*, not where it was *defined*.
           map('grt', require('telescope.builtin').lsp_type_definitions, '[G]oto [T]ype Definition')
 
+          map('grh', function()
+            local client = vim.lsp.get_client_by_id(event.data.client_id)
+            if client and client.name == 'clangd' then
+              vim.cmd 'ClangdSwitchSourceHeader'
+            else
+              vim.notify('Goto Header/Source only available for clangd', vim.log.levels.WARN)
+            end
+          end, '[G]oto [H]eader/Source')
+
           -- This function resolves a difference between neovim nightly (version 0.11) and stable (version 0.10)
           ---@param client vim.lsp.Client
           ---@param method vim.lsp.protocol.Method
@@ -208,10 +217,10 @@ return {
       --  - settings (table): Override the default settings passed when initializing the server.
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local servers = {
-        -- clangd = {},
+        clangd = { cmd = { 'clangd', '--background-index', '--suggest-missing-includes', '--clang-tidy', '--header-insertion=never' } },
         -- gopls = {},
-        -- pyright = {},
-        -- rust_analyzer = {},
+        basedpyright = { settings = { basedpyright = { analysis = { typeCheckingMode = 'basic' } } } },
+        rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
         -- Some languages (like typescript) have entire language plugins that can be useful:
