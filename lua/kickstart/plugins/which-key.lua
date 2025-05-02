@@ -83,6 +83,12 @@ return {
         -- Multicursor
         { '<leader><up>', icon = { icon = '󰞕', color = 'blue' } },
         { '<leader><down>', icon = { icon = '󰞒', color = 'blue' } },
+
+        -- Unsaved
+        { '<leader>u', group = '[U]nsaved changes', icon = { icon = '󱙃', color = 'yellow' } },
+        { '<leader>us', icon = { icon = '󰱼', color = 'green' } },
+        { '<leader>ua', icon = { icon = '󱇧', color = 'cyan' } },
+        { '<leader>ud', icon = { icon = '󰣜', color = 'red' } },
       },
     },
   },
